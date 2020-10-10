@@ -37,6 +37,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		400B8194253213A7002F18F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4092EC382531C10C00733823 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		400B8195253213AB002F18F5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4092EC362531C10C00733823 /* Contacts_SwiftUIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		400B8196253213B3002F18F5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4092EC412531C10E00733823 /* Contacts_SwiftUI.xcdatamodeld */,
+				4092EC3F2531C10E00733823 /* Persistence.swift */,
+				400B8197253213BA002F18F5 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		400B8197253213BA002F18F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		400B8198253213DD002F18F5 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				4092EC442531C10E00733823 /* Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		400B8199253213F2002F18F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4092EC3C2531C10E00733823 /* Preview Content */,
+				4092EC3A2531C10E00733823 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		4092EC2A2531C10C00733823 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +106,11 @@
 		4092EC352531C10C00733823 /* Contacts-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				4092EC362531C10C00733823 /* Contacts_SwiftUIApp.swift */,
-				4092EC382531C10C00733823 /* ContentView.swift */,
-				4092EC3A2531C10E00733823 /* Assets.xcassets */,
-				4092EC3F2531C10E00733823 /* Persistence.swift */,
-				4092EC442531C10E00733823 /* Info.plist */,
-				4092EC412531C10E00733823 /* Contacts_SwiftUI.xcdatamodeld */,
-				4092EC3C2531C10E00733823 /* Preview Content */,
+				400B8195253213AB002F18F5 /* App */,
+				400B8196253213B3002F18F5 /* Data */,
+				400B8198253213DD002F18F5 /* Plist */,
+				400B8194253213A7002F18F5 /* Views */,
+				400B8199253213F2002F18F5 /* Resources */,
 			);
 			path = "Contacts-SwiftUI";
 			sourceTree = "<group>";
@@ -276,10 +324,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Contacts-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Contacts-SwiftUI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = RE4YFXSB23;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Contacts-SwiftUI/Info.plist";
+				INFOPLIST_FILE = "Contacts-SwiftUI/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,10 +346,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Contacts-SwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Contacts-SwiftUI/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = RE4YFXSB23;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Contacts-SwiftUI/Info.plist";
+				INFOPLIST_FILE = "Contacts-SwiftUI/Plist/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
