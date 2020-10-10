@@ -1,0 +1,2 @@
+# contacts-swiftui
+This is a quick quick practice of using SwiftUI, before my current job stops my SwiftUI course. For context, I have 2 days a week to take and continue the comprehensive, and premium/paid SwiftUI course that they bought for me. And since they will be giving a new project, I will be stopping soon taking the said course during the weekdays only, and will try hard to continue the course in the weekends. I haven't reached the half of the course yet, but I feel like doing a sample project in SwiftUI will even make my learning faster.
