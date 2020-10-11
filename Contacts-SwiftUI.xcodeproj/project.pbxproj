@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4018157725337B1700447BF1 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4018157625337B1700447BF1 /* ContactRow.swift */; };
 		4092EC372531C10C00733823 /* Contacts_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4092EC362531C10C00733823 /* Contacts_SwiftUIApp.swift */; };
 		4092EC392531C10C00733823 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4092EC382531C10C00733823 /* ContentView.swift */; };
 		4092EC3B2531C10E00733823 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4092EC3A2531C10E00733823 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4018157625337B1700447BF1 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
 		4092EC332531C10C00733823 /* Contacts-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Contacts-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4092EC362531C10C00733823 /* Contacts_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts_SwiftUIApp.swift; sourceTree = "<group>"; };
 		4092EC382531C10C00733823 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				4092EC382531C10C00733823 /* ContentView.swift */,
+				4018157625337B1700447BF1 /* ContactRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4092EC402531C10E00733823 /* Persistence.swift in Sources */,
+				4018157725337B1700447BF1 /* ContactRow.swift in Sources */,
 				4092EC392531C10C00733823 /* ContentView.swift in Sources */,
 				4092EC432531C10E00733823 /* Contacts_SwiftUI.xcdatamodeld in Sources */,
 				4092EC372531C10C00733823 /* Contacts_SwiftUIApp.swift in Sources */,
