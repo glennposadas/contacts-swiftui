@@ -16,7 +16,7 @@ struct ContactRow: View {
 
     var body: some View {
         HStack {
-            Image(decorative: "fafa")
+            Image("ic_person_blank")
         }
     }
 }
