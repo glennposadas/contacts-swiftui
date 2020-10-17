@@ -14,6 +14,7 @@
 		4092EC3E2531C10E00733823 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4092EC3D2531C10E00733823 /* Preview Assets.xcassets */; };
 		4092EC402531C10E00733823 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4092EC3F2531C10E00733823 /* Persistence.swift */; };
 		4092EC432531C10E00733823 /* Contacts_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4092EC412531C10E00733823 /* Contacts_SwiftUI.xcdatamodeld */; };
+		457FD013253AD61E0067FCEB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457FD012253AD61E0067FCEB /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		4092EC3F2531C10E00733823 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4092EC422531C10E00733823 /* Contacts_SwiftUI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Contacts_SwiftUI.xcdatamodel; sourceTree = "<group>"; };
 		4092EC442531C10E00733823 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		457FD012253AD61E0067FCEB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				4092EC412531C10E00733823 /* Contacts_SwiftUI.xcdatamodeld */,
 				4092EC3F2531C10E00733823 /* Persistence.swift */,
 				400B8197253213BA002F18F5 /* Models */,
+				457FD012253AD61E0067FCEB /* DataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4092EC402531C10E00733823 /* Persistence.swift in Sources */,
+				457FD013253AD61E0067FCEB /* DataManager.swift in Sources */,
 				4018157725337B1700447BF1 /* ContactRow.swift in Sources */,
 				4092EC392531C10C00733823 /* ContentView.swift in Sources */,
 				4092EC432531C10E00733823 /* Contacts_SwiftUI.xcdatamodeld in Sources */,
