@@ -11,11 +11,13 @@ struct ContactRow: View {
     
     // MARK: - Properties
     
+    var contact: Contact
+    
     // MARK: - Body
 
     var body: some View {
         HStack {
-            Image("ic_person_blank")
+            self.contact.profilePictureImage
                 .renderingMode(.template)
                 .foregroundColor(.white)
                 .frame(width: 70, height: 70, alignment: .center)
@@ -31,7 +33,7 @@ struct ContactRow: View {
 
 struct ContactRow_Previews: PreviewProvider {
     static var previews: some View {
-        ContactRow()
+        ContactRow(contact: Contact())
             .previewLayout(.sizeThatFits)
             .padding()
     }

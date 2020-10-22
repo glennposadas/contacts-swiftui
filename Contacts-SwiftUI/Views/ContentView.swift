@@ -20,7 +20,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(self.contacts) { contact in
-                    
+                    ContactRow(contact: contact)
                 }
                 .onDelete(perform: self.deleteItems)
             }
