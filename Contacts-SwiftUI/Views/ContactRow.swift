@@ -18,9 +18,9 @@ struct ContactRow: View {
             Image("ic_person_blank")
                 .renderingMode(.template)
                 .foregroundColor(.white)
-                .frame(width: 80, height: 80, alignment: .center)
+                .frame(width: 70, height: 70, alignment: .center)
                 .background(Color.blue)
-                .cornerRadius(40)
+                .cornerRadius(35)
             VStack(alignment: .leading, spacing: 0) {
                 Text("Person name")
                 Text("Contact number")
