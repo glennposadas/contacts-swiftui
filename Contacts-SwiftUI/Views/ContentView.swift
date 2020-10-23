@@ -35,6 +35,11 @@ struct ContentView: View {
                     self.showingAlert = true
                 })
             }
+            .listStyle(PlainListStyle())
+            .navigationTitle("Contacts")
+            .navigationBarItems(trailing: HStack {
+                Button("Add", action: self.addItem)
+            })
             .alert(isPresented: self.$showingAlert) {
                 // We can force unwrap here because you only show the alert after .onDelete
                 let indexSet = self.deleteIndexSet!
@@ -47,11 +52,6 @@ struct ContentView: View {
                       }
                 )
             }
-            .listStyle(PlainListStyle())
-            .navigationTitle("Contacts")
-            .navigationBarItems(trailing: HStack {
-                Button("Add", action: self.addItem)
-            })
         }
     }
     
@@ -73,17 +73,17 @@ struct ContentView: View {
     }
     
     private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { self.contacts[$0] }.forEach(self.viewContext.delete)
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
+//        withAnimation {
+//            offsets.map { self.contacts[$0] }.forEach(self.viewContext.delete)
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
     }
 }
 
