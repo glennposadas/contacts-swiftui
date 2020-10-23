@@ -12,11 +12,11 @@ struct ContentView: View {
     
     // MARK: - Properties
     
-    @State private var showingAlert = false
-    @State private var deleteIndexSet: IndexSet!
-
+    @State private var showConfirm = false
+    @State private var indexToBeDeleted = 0
+    
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Contact.firstName, ascending: true)],
         animation: .default)
@@ -24,35 +24,59 @@ struct ContentView: View {
     
     // MARK: - Body
     
+    /*
+     var body: some View {
+     NavigationView {
+     List {
+     ForEach(self.contacts) { contact in
+     ContactRow(contact: contact)
+     .alert(isPresented: self.$showingAlert) {
+     Alert(title: Text("..."), message: Text("..."), primaryButton: .destructive(Text("Delete")) {
+     self.deleteItems(offsets: self.deleteIndexSet)
+     }, secondaryButton: .cancel() {
+     self.dele
+     }
+     }
+     }
+     .onDelete(perform: { indexSet in
+     self.deleteIndexSet = indexSet
+     self.showingAlert = true
+     })
+     }
+     .listStyle(PlainListStyle())
+     .navigationTitle("Contacts")
+     .navigationBarItems(trailing: HStack {
+     Button("Add", action: self.addItem)
+     })
+     }
+     //    }*/
+    
+    
     var body: some View {
-        NavigationView {
+        VStack {
             List {
-                ForEach(self.contacts) { contact in
+                ForEach(self.contacts){ contact in
                     ContactRow(contact: contact)
-                }
-                .onDelete(perform: { indexSet in
-                    self.deleteIndexSet = indexSet
-                    self.showingAlert = true
-                })
+                }.onDelete { self.setDeletIndex(at: $0) }
             }
-            .listStyle(PlainListStyle())
-            .navigationTitle("Contacts")
-            .navigationBarItems(trailing: HStack {
-                Button("Add", action: self.addItem)
-            })
-            .alert(isPresented: self.$showingAlert) {
-                // We can force unwrap here because you only show the alert after .onDelete
-                let indexSet = self.deleteIndexSet!
-                let name = self.contacts[indexSet.first!].firstName!
-                return Alert(title: Text("Are you sure?"),
-                      message: Text("Delete \(name)?"),
-                      primaryButton: .default(Text("Cancel")),
-                      secondaryButton: .cancel(Text("OK")) {
-                        self.deleteItems(offsets: indexSet)
-                      }
-                )
+            .alert(isPresented: $showConfirm) {
+                Alert(title: Text("Delete"), message: Text("Sure?"),
+                      primaryButton: .cancel(),
+                      secondaryButton: .destructive(Text("Delete")) {
+                        
+                        self.delete()
+                      })
             }
         }
+    }
+    
+    private func setDeletIndex(at idxs: IndexSet) {
+        self.showConfirm = true
+        self.indexToBeDeleted = idxs.first!
+    }
+    
+    private func delete() {
+        self.deleteItems(offsets: IndexSet(arrayLiteral: self.indexToBeDeleted))
     }
     
     private func addItem() {
@@ -73,17 +97,17 @@ struct ContentView: View {
     }
     
     private func deleteItems(offsets: IndexSet) {
-//        withAnimation {
-//            offsets.map { self.contacts[$0] }.forEach(self.viewContext.delete)
-//            do {
-//                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-//        }
+        withAnimation {
+            offsets.map { self.contacts[$0] }.forEach(self.viewContext.delete)
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 
