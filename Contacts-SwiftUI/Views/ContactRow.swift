@@ -17,15 +17,15 @@ struct ContactRow: View {
 
     var body: some View {
         HStack {
-            self.contact.profilePictureImage
+            self.contact.profilePictureImagePresentable
                 .renderingMode(.template)
                 .foregroundColor(.white)
                 .frame(width: 70, height: 70, alignment: .center)
                 .background(Color.blue)
                 .cornerRadius(35)
             VStack(alignment: .leading, spacing: 0) {
-                Text("Person name")
-                Text("Contact number")
+                Text(self.contact.fullNamePresentable)
+                Text(self.contact.contactNumberPresentable)
             }
         }
     }

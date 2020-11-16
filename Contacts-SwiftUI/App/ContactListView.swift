@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ContactListView.swift
 //  Contacts-SwiftUI
 //
 //  Created by Glenn Von Posadas on 10/10/20.
@@ -8,11 +8,12 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct ContactListView: View {
     
     // MARK: - Properties
-    
+      
     @State private var showConfirm = false
+  
     @State private var indexToBeDeleted = 0
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -23,54 +24,33 @@ struct ContentView: View {
     private var contacts: FetchedResults<Contact>
     
     // MARK: - Body
-    
-    /*
-     var body: some View {
-     NavigationView {
-     List {
-     ForEach(self.contacts) { contact in
-     ContactRow(contact: contact)
-     .alert(isPresented: self.$showingAlert) {
-     Alert(title: Text("..."), message: Text("..."), primaryButton: .destructive(Text("Delete")) {
-     self.deleteItems(offsets: self.deleteIndexSet)
-     }, secondaryButton: .cancel() {
-     self.dele
-     }
-     }
-     }
-     .onDelete(perform: { indexSet in
-     self.deleteIndexSet = indexSet
-     self.showingAlert = true
-     })
-     }
-     .listStyle(PlainListStyle())
-     .navigationTitle("Contacts")
-     .navigationBarItems(trailing: HStack {
-     Button("Add", action: self.addItem)
-     })
-     }
-     //    }*/
-    
-    
+
     var body: some View {
-        VStack {
-            List {
-                ForEach(self.contacts){ contact in
-                    ContactRow(contact: contact)
-                }.onDelete { self.setDeletIndex(at: $0) }
-            }
-            .alert(isPresented: $showConfirm) {
-                Alert(title: Text("Delete"), message: Text("Sure?"),
-                      primaryButton: .cancel(),
-                      secondaryButton: .destructive(Text("Delete")) {
-                        
-                        self.delete()
-                      })
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(self.contacts){ contact in
+                        ContactRow(contact: contact)
+                    }.onDelete { self.setDeleteIndex(at: $0) }
+                }
+                .alert(isPresented: $showConfirm) {
+                    Alert(title: Text("Delete"), message: Text("Sure?"),
+                          primaryButton: .cancel(),
+                          secondaryButton: .destructive(Text("Delete")) {
+                            
+                            self.delete()
+                          })
+                }
+                .listStyle(PlainListStyle())
+                .navigationTitle("Contacts")
+                .navigationBarItems(trailing: HStack {
+                    Button("Add", action: self.addItem)
+                })
             }
         }
     }
     
-    private func setDeletIndex(at idxs: IndexSet) {
+    private func setDeleteIndex(at idxs: IndexSet) {
         self.showConfirm = true
         self.indexToBeDeleted = idxs.first!
     }
@@ -113,6 +93,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContactListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
